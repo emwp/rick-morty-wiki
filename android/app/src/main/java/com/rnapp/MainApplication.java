@@ -1,4 +1,4 @@
-package com.reactnativeapp;
+package com.rnapp;
 
 import android.app.Application;
 
