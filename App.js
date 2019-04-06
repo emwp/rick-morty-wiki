@@ -1,8 +1,8 @@
 import React from 'react';
-import Login from './src/views/Login';
+import AppNavigation from './src/navigation/AppNavigation';
 
 const App = () => {
-  return <Login />;
+  return <AppNavigation />;
 };
 
 export default App;
