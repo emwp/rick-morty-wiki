@@ -1,16 +1,24 @@
-import { createAppContainer, createSwitchNavigator, create } from 'react-navigation';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import Home from '../views/Home';
-import Details from '../views/Details';
 import Login from '../views/Login';
 
-const screens = createSwitchNavigator(
+const screens = createStackNavigator(
   {
-    Login: { screen: Login },
+    Login: { screen: Login, navigationOptions: { header: null } },
     Home: { screen: Home },
-    Details: { screen: Details },
   },
   {
     initialRouteName: 'Login',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#EFF0F1',
+        color: 'purple',
+      },
+      headerTintColor: '#1e90ff',
+      headerTitleStyle: {
+        color: '#1e90ff',
+      },
+    },
   },
 );
 
