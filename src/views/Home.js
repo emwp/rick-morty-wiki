@@ -1,36 +1,22 @@
-import React, { Fragment, Component } from 'react';
+import React from 'react';
+import Character from '../queries/Character';
 
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-class Home extends Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
-
-  render() {
-    return (
-      <Fragment>
-        {/* <MainNavigation /> */}
-        <View style={styles.container}>
-          <Text style={styles.text}>Home</Text>
-          <Button title="Details" color="red" />
-        </View>
-      </Fragment>
-    );
-  }
-}
+const Details = props => <Character />;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
   },
   text: {
     fontSize: 30,
     color: '#fff',
     textAlign: 'center',
     margin: 20,
+    marginTop: 50,
   },
 });
 
-export default Home;
+export default Details;
