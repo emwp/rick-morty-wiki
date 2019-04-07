@@ -1,24 +1,30 @@
 {
-  "name": "rnapp",
+  "name": "rickAndMorty",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "relay": "relay-compiler --src ./src --schema ./api/schema.graphql"
   },
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-gesture-handler": "^1.1.0",
-    "react-navigation": "^3.6.1"
+    "react-navigation": "^3.6.1",
+    "react-relay": "^3.0.0",
+    "react-timer-mixin": "^0.13.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.0.0-bridge.0",
     "@babel/runtime": "^7.4.3",
     "babel-jest": "^24.7.1",
+    "babel-plugin-relay": "^3.0.0",
+    "graphql": "^14.2.1",
     "jest": "^24.7.1",
-    "metro-react-native-babel-preset": "^0.53.1",
-    "react-test-renderer": "16.8.3"
+    "metro-react-native-babel-preset": "^0.51.1",
+    "react-test-renderer": "16.6.3",
+    "relay-compiler": "^3.0.0"
   },
   "jest": {
     "preset": "react-native"

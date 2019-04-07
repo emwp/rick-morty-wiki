@@ -1,4 +1,4 @@
-package com.rnapp;
+package com.rickandmorty;
 
 import android.app.Application;
 
