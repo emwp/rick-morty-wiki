@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 class Login extends Component {
-  static navigationOptions = {
-    title: 'Login',
-  };
+  // static navigationOptions = {
+  //   title: 'Login',
+  // };
   render() {
     return (
       <View style={styles.container}>

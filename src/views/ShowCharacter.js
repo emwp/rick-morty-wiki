@@ -5,9 +5,6 @@ import Character from '../queries/Character';
 import { StyleSheet } from 'react-native';
 
 class ShowCharacter extends Component {
-  static navigationOptions = {
-    title: 'Characters',
-  };
   render() {
     const navState = this.props.navigation.state.params;
     return (

@@ -1,23 +1,50 @@
+import React from 'react';
+import { Image } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import Home from '../views/Home';
-import Login from '../views/Login';
 import ShowCharacter from '../views/ShowCharacter';
 
 const screens = createBottomTabNavigator(
   {
-    Login: { screen: Login, navigationOptions: { header: null } },
-    Home: { screen: Home },
-    Character: { screen: ShowCharacter },
+    Characters: {
+      screen: Home,
+      navigationOptions: {
+        tabBarLabel: 'Characters',
+        tabBarIcon: ({ tintColor }) => {
+          return (
+            <Image
+              source={require('../assets/rick.png')}
+              style={{ width: 26, height: 26, marginTop: 7, tintColor: tintColor }}
+            />
+          );
+        },
+      },
+    },
+    Character: {
+      screen: ShowCharacter,
+      navigationOptions: {
+        tabBarLabel: 'Character',
+        tabBarIcon: ({ tintColor }) => {
+          return (
+            <Image
+              source={require('../assets/globe.png')}
+              style={{ width: 26, height: 26, marginTop: 7 }}
+            />
+          );
+        },
+      },
+    },
   },
   {
-    initialRouteName: 'Home',
     tabBarOptions: {
-      activeTintColor: 'white',
+      activeTintColor: '',
+      showIcon: true,
+      showLabel: true,
       labelStyle: {
         fontSize: 16,
       },
       style: {
-        backgroundColor: 'blue',
+        flexDirection: 'row',
       },
     },
   },
