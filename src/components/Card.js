@@ -1,19 +1,16 @@
 import React from 'react';
-import { View, Text, Image, TouchableNativeFeedback, Alert, StyleSheet } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import { View, Text, Image, TouchableNativeFeedback, StyleSheet } from 'react-native';
 
 const Card = props => {
-  const { id, image, name, status, species } = props;
-
-  const pressHandler = () => {
-    Alert.alert(`id: ${id}`);
-  };
-
+  const { id, image, name, navigation } = props;
+  const pressHandler = () => navigation.navigate('Character', { id: id });
   return (
     <View style={styles.container}>
-      <TouchableNativeFeedback onPress={pressHandler}>
+      <TouchableNativeFeedback onPress={() => pressHandler()}>
         <Image source={{ uri: image }} style={styles.image} />
       </TouchableNativeFeedback>
-      <TouchableNativeFeedback onPress={pressHandler} style={styles.textContainer}>
+      <TouchableNativeFeedback onPress={() => pressHandler()} style={styles.textContainer}>
         <Text style={styles.text}>{name}</Text>
       </TouchableNativeFeedback>
     </View>
@@ -52,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Card;
+export default withNavigation(Card);

@@ -4,41 +4,41 @@ import { graphql, QueryRenderer } from 'react-relay';
 
 import environment from '../environment/Environment';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <QueryRenderer
-        environment={environment}
-        query={graphql`
-          query CharacterQuery {
-            character(id: 5) {
-              name
-            }
+const Character = props => {
+  return (
+    <QueryRenderer
+      environment={environment}
+      query={graphql`
+        query CharacterQuery($charID: ID!) {
+          character(id: $charID) {
+            name
           }
-        `}
-        variables={{ id: 5 }}
-        render={({ error, props }) => {
-          if (error) {
-            return (
-              <View>
-                <Text>Error!</Text>
-              </View>
-            );
-          }
-          if (!props) {
-            return (
-              <View>
-                <Text>Loading!</Text>
-              </View>
-            );
-          }
+        }
+      `}
+      variables={{ charID: props.navState.id }}
+      render={({ error, props }) => {
+        if (error) {
           return (
             <View>
-              <Text>Character: {props.character.name}</Text>
+              <Text>Error!</Text>
             </View>
           );
-        }}
-      />
-    );
-  }
-}
+        }
+        if (!props) {
+          return (
+            <View>
+              <Text>Loading!</Text>
+            </View>
+          );
+        }
+        return (
+          <View>
+            <Text>Name: {props.character.name}</Text>
+          </View>
+        );
+      }}
+    />
+  );
+};
+
+export default Character;

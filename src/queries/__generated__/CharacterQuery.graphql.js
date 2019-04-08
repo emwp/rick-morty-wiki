@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 0221c49ef87dccae0675188f75cf1988
+ * @relayHash 62e272d6dd2b34229efe7234daeecc1e
  */
 
 /* eslint-disable */
@@ -9,7 +9,9 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-export type CharacterQueryVariables = {||};
+export type CharacterQueryVariables = {|
+  charID: string
+|};
 export type CharacterQueryResponse = {|
   +character: ?{|
     +name: ?string
@@ -23,8 +25,10 @@ export type CharacterQuery = {|
 
 
 /*
-query CharacterQuery {
-  character(id: 5) {
+query CharacterQuery(
+  $charID: ID!
+) {
+  character(id: $charID) {
     name
     id
   }
@@ -34,13 +38,21 @@ query CharacterQuery {
 const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
-    "kind": "Literal",
+    "kind": "LocalArgument",
+    "name": "charID",
+    "type": "ID!",
+    "defaultValue": null
+  }
+],
+v1 = [
+  {
+    "kind": "Variable",
     "name": "id",
-    "value": 5,
+    "variableName": "charID",
     "type": "ID"
   }
 ],
-v1 = {
+v2 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "name",
@@ -54,18 +66,18 @@ return {
     "name": "CharacterQuery",
     "type": "Query",
     "metadata": null,
-    "argumentDefinitions": [],
+    "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
         "name": "character",
-        "storageKey": "character(id:5)",
-        "args": (v0/*: any*/),
+        "storageKey": null,
+        "args": (v1/*: any*/),
         "concreteType": "Character",
         "plural": false,
         "selections": [
-          (v1/*: any*/)
+          (v2/*: any*/)
         ]
       }
     ]
@@ -73,18 +85,18 @@ return {
   "operation": {
     "kind": "Operation",
     "name": "CharacterQuery",
-    "argumentDefinitions": [],
+    "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
         "name": "character",
-        "storageKey": "character(id:5)",
-        "args": (v0/*: any*/),
+        "storageKey": null,
+        "args": (v1/*: any*/),
         "concreteType": "Character",
         "plural": false,
         "selections": [
-          (v1/*: any*/),
+          (v2/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -100,11 +112,11 @@ return {
     "operationKind": "query",
     "name": "CharacterQuery",
     "id": null,
-    "text": "query CharacterQuery {\n  character(id: 5) {\n    name\n    id\n  }\n}\n",
+    "text": "query CharacterQuery(\n  $charID: ID!\n) {\n  character(id: $charID) {\n    name\n    id\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '9175a7f907f06cdda9252b8efa68af87';
+(node/*: any*/).hash = 'af8ae5c4f05b3a3a78e855646cc57c88';
 module.exports = node;

@@ -1,22 +1,23 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import Home from '../views/Home';
 import Login from '../views/Login';
+import ShowCharacter from '../views/ShowCharacter';
 
-const screens = createStackNavigator(
+const screens = createBottomTabNavigator(
   {
     Login: { screen: Login, navigationOptions: { header: null } },
     Home: { screen: Home },
+    Character: { screen: ShowCharacter },
   },
   {
     initialRouteName: 'Home',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: '#EFF0F1',
-        color: 'purple',
+    tabBarOptions: {
+      activeTintColor: 'white',
+      labelStyle: {
+        fontSize: 16,
       },
-      headerTintColor: '#1e90ff',
-      headerTitleStyle: {
-        color: '#1e90ff',
+      style: {
+        backgroundColor: 'blue',
       },
     },
   },
