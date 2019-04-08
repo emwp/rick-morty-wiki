@@ -1,3 +1,5 @@
+import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+
 /**
  * @format
  */

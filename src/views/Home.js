@@ -1,22 +1,27 @@
-import React from 'react';
-import Character from '../queries/Character';
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import Characters from '../queries/Characters';
 
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const Details = props => <Character />;
+class Home extends Component {
+  static navigationOptions = {
+    title: 'Characters',
+  };
+  render() {
+    return (
+      <View style={styles.container}>
+        <Characters />
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
-  },
-  text: {
-    fontSize: 30,
-    color: '#fff',
-    textAlign: 'center',
-    margin: 20,
-    marginTop: 50,
+    backgroundColor: '#99cbfc',
   },
 });
 
-export default Details;
+export default Home;
