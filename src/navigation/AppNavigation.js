@@ -8,7 +8,7 @@ const screens = createStackNavigator(
     Home: { screen: Home },
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#EFF0F1',

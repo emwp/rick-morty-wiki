@@ -41,6 +41,7 @@ export default class App extends React.Component {
           }
           return (
             <FlatList
+              style={{ marginTop: 15, marginBottom: 15 }}
               data={props.characters.results}
               keyExtractor={item => item.id.toString()}
               renderItem={({ item }) => (

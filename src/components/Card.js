@@ -1,17 +1,21 @@
 import React from 'react';
-
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableNativeFeedback, Alert, StyleSheet } from 'react-native';
 
 const Card = props => {
   const { id, image, name, status, species } = props;
+
+  const pressHandler = () => {
+    Alert.alert(`id: ${id}`);
+  };
+
   return (
     <View style={styles.container}>
-      <View>
+      <TouchableNativeFeedback onPress={pressHandler}>
         <Image source={{ uri: image }} style={styles.image} />
-      </View>
-      <View style={styles.textContainer}>
+      </TouchableNativeFeedback>
+      <TouchableNativeFeedback onPress={pressHandler} style={styles.textContainer}>
         <Text style={styles.text}>{name}</Text>
-      </View>
+      </TouchableNativeFeedback>
     </View>
   );
 };
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginLeft: 'auto',
     marginRight: 'auto',
-    margin: 5,
+    margin: 10,
     zIndex: 1000,
   },
   image: {
@@ -40,13 +44,11 @@ const styles = StyleSheet.create({
     width: 100,
     marginLeft: 10,
   },
-  textContainer: {
-    marginLeft: 10,
-  },
   text: {
     fontSize: 22,
     fontWeight: '600',
-    textAlign: 'center',
+    marginLeft: 40,
+    overflow: 'hidden',
   },
 });
 
