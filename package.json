@@ -24,6 +24,7 @@
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.51.1",
     "react-test-renderer": "16.6.3",
+    "reactotron-react-native": "^3.2.1",
     "relay-compiler": "^3.0.0"
   },
   "jest": {
