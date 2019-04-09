@@ -1,6 +1,12 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import {
+  createAppContainer,
+  createBottomTabNavigator,
+  createStackNavigator,
+  createSwitchNavigator,
+  create,
+} from 'react-navigation';
 import CharacterList from '../views/CharacterList';
 import ShowCharacter from '../views/ShowCharacter';
 import LocationList from '../views/LocationList';
@@ -52,6 +58,7 @@ const screens = createBottomTabNavigator(
     },
   },
   {
+    initialRouteName: 'Characters',
     tabBarOptions: {
       activeTintColor: '',
       showIcon: true,
@@ -63,4 +70,28 @@ const screens = createBottomTabNavigator(
   },
 );
 
-export default createAppContainer(screens);
+const CharacterDetails = createStackNavigator(
+  {
+    Character: {
+      screen: ShowCharacter,
+      navigationOptions: () => ({ title: 'Character' }),
+    },
+    Characters: {
+      screen: CharacterList,
+      navigationOptions: () => ({ header: null }),
+    },
+  },
+  {
+    initialRouteName: 'Characters',
+  },
+);
+
+const SwitchStack = createSwitchNavigator(
+  {
+    Main: screens,
+    CharDetails: CharacterDetails,
+  },
+  { initialRouteName: 'Main' },
+);
+
+export default createAppContainer(SwitchStack);
