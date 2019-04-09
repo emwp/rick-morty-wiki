@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { graphql, QueryRenderer } from 'react-relay';
-
 import environment from '../environment/Environment';
+import SingleCharacter from '../components/SingleCharacter';
 
 const Character = props => {
   return (
@@ -11,7 +11,18 @@ const Character = props => {
       query={graphql`
         query CharacterQuery($charID: ID!) {
           character(id: $charID) {
+            id
             name
+            status
+            species
+            gender
+            origin {
+              name
+            }
+            location {
+              name
+            }
+            image
           }
         }
       `}
@@ -33,7 +44,16 @@ const Character = props => {
         }
         return (
           <View>
-            <Text>Name: {props.character.name}</Text>
+            <SingleCharacter
+              id={props.character.id}
+              name={props.character.name}
+              status={props.character.status}
+              species={props.character.species}
+              gender={props.character.gender}
+              origin={props.character.origin.name}
+              lastLocation={props.character.location.name}
+              image={props.character.image}
+            />
           </View>
         );
       }}

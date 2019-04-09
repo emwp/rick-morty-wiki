@@ -15,6 +15,7 @@ type Character {
   type: String
   gender: String
   origin: Location
+  location: Location
   image: String
   episode: [Episode]
   created: String

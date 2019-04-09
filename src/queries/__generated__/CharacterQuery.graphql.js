@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 62e272d6dd2b34229efe7234daeecc1e
+ * @relayHash 8789affcc95b3635ae1b21db5b86892d
  */
 
 /* eslint-disable */
@@ -14,7 +14,18 @@ export type CharacterQueryVariables = {|
 |};
 export type CharacterQueryResponse = {|
   +character: ?{|
-    +name: ?string
+    +id: ?string,
+    +name: ?string,
+    +status: ?string,
+    +species: ?string,
+    +gender: ?string,
+    +origin: ?{|
+      +name: ?string
+    |},
+    +location: ?{|
+      +name: ?string
+    |},
+    +image: ?string,
   |}
 |};
 export type CharacterQuery = {|
@@ -29,8 +40,20 @@ query CharacterQuery(
   $charID: ID!
 ) {
   character(id: $charID) {
-    name
     id
+    name
+    status
+    species
+    gender
+    origin {
+      name
+      id
+    }
+    location {
+      name
+      id
+    }
+    image
   }
 }
 */
@@ -55,10 +78,52 @@ v1 = [
 v2 = {
   "kind": "ScalarField",
   "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v3 = {
+  "kind": "ScalarField",
+  "alias": null,
   "name": "name",
   "args": null,
   "storageKey": null
-};
+},
+v4 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "status",
+  "args": null,
+  "storageKey": null
+},
+v5 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "species",
+  "args": null,
+  "storageKey": null
+},
+v6 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "gender",
+  "args": null,
+  "storageKey": null
+},
+v7 = [
+  (v3/*: any*/)
+],
+v8 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "image",
+  "args": null,
+  "storageKey": null
+},
+v9 = [
+  (v3/*: any*/),
+  (v2/*: any*/)
+];
 return {
   "kind": "Request",
   "fragment": {
@@ -77,7 +142,32 @@ return {
         "concreteType": "Character",
         "plural": false,
         "selections": [
-          (v2/*: any*/)
+          (v2/*: any*/),
+          (v3/*: any*/),
+          (v4/*: any*/),
+          (v5/*: any*/),
+          (v6/*: any*/),
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "origin",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Location",
+            "plural": false,
+            "selections": (v7/*: any*/)
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "location",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Location",
+            "plural": false,
+            "selections": (v7/*: any*/)
+          },
+          (v8/*: any*/)
         ]
       }
     ]
@@ -97,13 +187,31 @@ return {
         "plural": false,
         "selections": [
           (v2/*: any*/),
+          (v3/*: any*/),
+          (v4/*: any*/),
+          (v5/*: any*/),
+          (v6/*: any*/),
           {
-            "kind": "ScalarField",
+            "kind": "LinkedField",
             "alias": null,
-            "name": "id",
+            "name": "origin",
+            "storageKey": null,
             "args": null,
-            "storageKey": null
-          }
+            "concreteType": "Location",
+            "plural": false,
+            "selections": (v9/*: any*/)
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "location",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Location",
+            "plural": false,
+            "selections": (v9/*: any*/)
+          },
+          (v8/*: any*/)
         ]
       }
     ]
@@ -112,11 +220,11 @@ return {
     "operationKind": "query",
     "name": "CharacterQuery",
     "id": null,
-    "text": "query CharacterQuery(\n  $charID: ID!\n) {\n  character(id: $charID) {\n    name\n    id\n  }\n}\n",
+    "text": "query CharacterQuery(\n  $charID: ID!\n) {\n  character(id: $charID) {\n    id\n    name\n    status\n    species\n    gender\n    origin {\n      name\n      id\n    }\n    location {\n      name\n      id\n    }\n    image\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'af8ae5c4f05b3a3a78e855646cc57c88';
+(node/*: any*/).hash = 'a0bb672455ff0c14e4e47d7cd9cbb30f';
 module.exports = node;
