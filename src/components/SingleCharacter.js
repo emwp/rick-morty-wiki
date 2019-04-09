@@ -4,8 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const SingleCharacter = ({ id, name, status, species, gender, origin, lastLocation, image }) => {
   return (
     <View>
-      <Text>{name}</Text>
-      <Text>{lastLocation}</Text>
+      <Text style={styles.text}>Should be character name: {name}</Text>
     </View>
   );
 };
@@ -14,9 +13,9 @@ export default SingleCharacter;
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 22,
-    fontWeight: '600',
-    marginLeft: 40,
+    fontSize: 18,
+    fontWeight: '500',
+    marginLeft: 10,
     overflow: 'hidden',
   },
 });
