@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     margin: 10,
-    zIndex: 1000,
   },
   image: {
     borderColor: '#1e90ff',

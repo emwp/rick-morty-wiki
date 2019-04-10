@@ -1,4 +1,9 @@
+interface Node {
+  id: ID!
+}
+
 type Query {
+  node(id: ID!): Node
   character(id: ID): Character
   characters(page: Int, filter: FilterCharacter): Characters
   episode(id: ID): Episode
@@ -7,8 +12,8 @@ type Query {
   locations(page: Int, filter: FilterLocation): Locations
 }
 
-type Character {
-  id: ID
+type Character implements Node {
+  id: ID!
   name: String
   status: String
   species: String
@@ -27,7 +32,6 @@ type Characters {
 }
 
 type Location {
-  id: ID
   name: String
   type: String
   dimension: String
@@ -41,7 +45,6 @@ type Locations {
 }
 
 type Episode {
-  id: ID
   name: String
   air_date: String
   episode: String
