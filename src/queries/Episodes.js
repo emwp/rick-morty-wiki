@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { graphql, QueryRenderer } from 'react-relay';
 
+import EpisodeItem from '../components/EpisodeItem';
+
 import environment from '../environment/Environment';
 
 const Episodes = componentProps => {
@@ -36,10 +38,18 @@ const Episodes = componentProps => {
           );
         }
         return (
-          <View>
-            <Text>{props.episodes.results[1].name}</Text>
-            <Text>{props.episodes.results[1].episode}</Text>
-          </View>
+          <FlatList
+            data={props.episodes.results}
+            keyExtractor={item => item.id.toString()}
+            renderItem={({ item }) => (
+              <EpisodeItem
+                id={item.id}
+                name={item.name}
+                air_date={item.air_date}
+                episode={item.episode}
+              />
+            )}
+          />
         );
       }}
     />

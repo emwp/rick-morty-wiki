@@ -4,7 +4,7 @@ import Characters from '../queries/Characters';
 
 import { StyleSheet } from 'react-native';
 
-class Home extends Component {
+class CharacterList extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default CharacterList;

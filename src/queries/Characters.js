@@ -49,7 +49,6 @@ const Characters = componentProps => {
                 status={item.status}
                 species={item.species}
                 image={item.image}
-                // navigation={componentProps.navigation}
               />
             )}
           />

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Episodes from '../queries/Episodes';
 
-class Home extends Component {
+class EpisodeList extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -15,8 +15,8 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#99cbfc',
+    backgroundColor: '#247BA0',
   },
 });
 
-export default Home;
+export default EpisodeList;
