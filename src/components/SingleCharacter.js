@@ -5,6 +5,14 @@ const SingleCharacter = ({ id, name, status, species, gender, origin, lastLocati
   return (
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.image} />
+      <View style={styles.infoContainer}>
+        <Text style={styles.info}>Name: {name}</Text>
+        <Text style={styles.info}>Gender: {gender}</Text>
+        <Text style={styles.info}>Status: {status}</Text>
+        <Text style={styles.info}>Species: {species}</Text>
+        <Text style={styles.info}>Origin: {origin}</Text>
+        <Text style={styles.info}>Location: {lastLocation}</Text>
+      </View>
     </View>
   );
 };
@@ -24,7 +32,13 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     margin: 10,
   },
+  infoContainer: {
+    marginTop: 10,
+  },
   info: {
-    fontSize: 18,
+    fontSize: 20,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    color: '#fff',
   },
 });
