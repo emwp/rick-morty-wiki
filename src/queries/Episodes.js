@@ -12,7 +12,6 @@ const Episodes = componentProps => {
         query EpisodesQuery {
           episodes(page: 1) {
             results {
-              id
               name
               air_date
               episode

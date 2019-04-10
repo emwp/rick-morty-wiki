@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 2cc67f1f26e0193832bf90463d3ce5e0
+ * @relayHash da4469ff988af01b0c68c40c4010a677
  */
 
 /* eslint-disable */
@@ -13,7 +13,7 @@ export type CharactersQueryVariables = {||};
 export type CharactersQueryResponse = {|
   +characters: ?{|
     +results: ?$ReadOnlyArray<?{|
-      +id: ?string,
+      +id: string,
       +name: ?string,
       +status: ?string,
       +species: ?string,

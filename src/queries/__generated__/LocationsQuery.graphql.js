@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 19b1357978a2513f73782c00ad07b823
+ * @relayHash 6e57c340b0cbba4fb5d97ff1105fe07a
  */
 
 /* eslint-disable */
@@ -13,7 +13,6 @@ export type LocationsQueryVariables = {||};
 export type LocationsQueryResponse = {|
   +locations: ?{|
     +results: ?$ReadOnlyArray<?{|
-      +id: ?string,
       +name: ?string,
       +type: ?string,
       +dimension: ?string,
@@ -31,7 +30,6 @@ export type LocationsQuery = {|
 query LocationsQuery {
   locations(page: 1) {
     results {
-      id
       name
       type
       dimension
@@ -67,13 +65,6 @@ var v0 = [
         "concreteType": "Location",
         "plural": true,
         "selections": [
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "id",
-            "args": null,
-            "storageKey": null
-          },
           {
             "kind": "ScalarField",
             "alias": null,
@@ -120,11 +111,11 @@ return {
     "operationKind": "query",
     "name": "LocationsQuery",
     "id": null,
-    "text": "query LocationsQuery {\n  locations(page: 1) {\n    results {\n      id\n      name\n      type\n      dimension\n    }\n  }\n}\n",
+    "text": "query LocationsQuery {\n  locations(page: 1) {\n    results {\n      name\n      type\n      dimension\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'b9c3e3d31f4fa0f076017717a4746fc2';
+(node/*: any*/).hash = 'dc3a1212d3677467c4433ba1d0b6d8d0';
 module.exports = node;

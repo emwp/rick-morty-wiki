@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 8789affcc95b3635ae1b21db5b86892d
+ * @relayHash 08a78e579f88fabc1d10f02fe1bc1aaf
  */
 
 /* eslint-disable */
@@ -14,7 +14,6 @@ export type CharacterQueryVariables = {|
 |};
 export type CharacterQueryResponse = {|
   +character: ?{|
-    +id: ?string,
     +name: ?string,
     +status: ?string,
     +species: ?string,
@@ -40,20 +39,18 @@ query CharacterQuery(
   $charID: ID!
 ) {
   character(id: $charID) {
-    id
     name
     status
     species
     gender
     origin {
       name
-      id
     }
     location {
       name
-      id
     }
     image
+    id
   }
 }
 */
@@ -78,52 +75,61 @@ v1 = [
 v2 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "id",
+  "name": "name",
   "args": null,
   "storageKey": null
 },
 v3 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "name",
+  "name": "status",
   "args": null,
   "storageKey": null
 },
 v4 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "status",
+  "name": "species",
   "args": null,
   "storageKey": null
 },
 v5 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "species",
-  "args": null,
-  "storageKey": null
-},
-v6 = {
-  "kind": "ScalarField",
-  "alias": null,
   "name": "gender",
   "args": null,
   "storageKey": null
 },
-v7 = [
-  (v3/*: any*/)
+v6 = [
+  (v2/*: any*/)
 ],
+v7 = {
+  "kind": "LinkedField",
+  "alias": null,
+  "name": "origin",
+  "storageKey": null,
+  "args": null,
+  "concreteType": "Location",
+  "plural": false,
+  "selections": (v6/*: any*/)
+},
 v8 = {
+  "kind": "LinkedField",
+  "alias": null,
+  "name": "location",
+  "storageKey": null,
+  "args": null,
+  "concreteType": "Location",
+  "plural": false,
+  "selections": (v6/*: any*/)
+},
+v9 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "image",
   "args": null,
   "storageKey": null
-},
-v9 = [
-  (v3/*: any*/),
-  (v2/*: any*/)
-];
+};
 return {
   "kind": "Request",
   "fragment": {
@@ -146,28 +152,9 @@ return {
           (v3/*: any*/),
           (v4/*: any*/),
           (v5/*: any*/),
-          (v6/*: any*/),
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "origin",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Location",
-            "plural": false,
-            "selections": (v7/*: any*/)
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "location",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Location",
-            "plural": false,
-            "selections": (v7/*: any*/)
-          },
-          (v8/*: any*/)
+          (v7/*: any*/),
+          (v8/*: any*/),
+          (v9/*: any*/)
         ]
       }
     ]
@@ -190,28 +177,16 @@ return {
           (v3/*: any*/),
           (v4/*: any*/),
           (v5/*: any*/),
-          (v6/*: any*/),
+          (v7/*: any*/),
+          (v8/*: any*/),
+          (v9/*: any*/),
           {
-            "kind": "LinkedField",
+            "kind": "ScalarField",
             "alias": null,
-            "name": "origin",
-            "storageKey": null,
+            "name": "id",
             "args": null,
-            "concreteType": "Location",
-            "plural": false,
-            "selections": (v9/*: any*/)
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "location",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Location",
-            "plural": false,
-            "selections": (v9/*: any*/)
-          },
-          (v8/*: any*/)
+            "storageKey": null
+          }
         ]
       }
     ]
@@ -220,11 +195,11 @@ return {
     "operationKind": "query",
     "name": "CharacterQuery",
     "id": null,
-    "text": "query CharacterQuery(\n  $charID: ID!\n) {\n  character(id: $charID) {\n    id\n    name\n    status\n    species\n    gender\n    origin {\n      name\n      id\n    }\n    location {\n      name\n      id\n    }\n    image\n  }\n}\n",
+    "text": "query CharacterQuery(\n  $charID: ID!\n) {\n  character(id: $charID) {\n    name\n    status\n    species\n    gender\n    origin {\n      name\n    }\n    location {\n      name\n    }\n    image\n    id\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'a0bb672455ff0c14e4e47d7cd9cbb30f';
+(node/*: any*/).hash = '160734096e54052199a179940886e4ee';
 module.exports = node;

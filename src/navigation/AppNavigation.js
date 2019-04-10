@@ -5,7 +5,6 @@ import {
   createBottomTabNavigator,
   createStackNavigator,
   createSwitchNavigator,
-  create,
 } from 'react-navigation';
 import CharacterList from '../views/CharacterList';
 import ShowCharacter from '../views/ShowCharacter';
@@ -77,7 +76,7 @@ const CharacterDetails = createStackNavigator(
       navigationOptions: () => ({ title: 'Character' }),
     },
     Characters: {
-      screen: CharacterList,
+      screen: screens,
       navigationOptions: () => ({ header: null }),
     },
   },

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 7f662f265159468aca2901264aa6e90f
+ * @relayHash 6bacac9ffbb0c8d199d44c57bcbe8daa
  */
 
 /* eslint-disable */
@@ -41,7 +41,6 @@ query EpisodeQuery(
       name
       id
     }
-    id
   }
 }
 */
@@ -81,13 +80,6 @@ v4 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "episode",
-  "args": null,
-  "storageKey": null
-},
-v5 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "id",
   "args": null,
   "storageKey": null
 };
@@ -155,10 +147,15 @@ return {
             "plural": true,
             "selections": [
               (v2/*: any*/),
-              (v5/*: any*/)
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "id",
+                "args": null,
+                "storageKey": null
+              }
             ]
-          },
-          (v5/*: any*/)
+          }
         ]
       }
     ]
@@ -167,7 +164,7 @@ return {
     "operationKind": "query",
     "name": "EpisodeQuery",
     "id": null,
-    "text": "query EpisodeQuery(\n  $epID: ID!\n) {\n  episode(id: $epID) {\n    name\n    air_date\n    episode\n    characters {\n      name\n      id\n    }\n    id\n  }\n}\n",
+    "text": "query EpisodeQuery(\n  $epID: ID!\n) {\n  episode(id: $epID) {\n    name\n    air_date\n    episode\n    characters {\n      name\n      id\n    }\n  }\n}\n",
     "metadata": {}
   }
 };

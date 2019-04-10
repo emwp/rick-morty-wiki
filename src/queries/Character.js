@@ -11,7 +11,6 @@ const Character = props => {
       query={graphql`
         query CharacterQuery($charID: ID!) {
           character(id: $charID) {
-            id
             name
             status
             species

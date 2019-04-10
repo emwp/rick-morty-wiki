@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash bda632d3bdadfe9e05bcb6311d115dea
+ * @relayHash 7906bae826fab3df51105d7cbc2927cd
  */
 
 /* eslint-disable */
@@ -13,7 +13,6 @@ export type EpisodesQueryVariables = {||};
 export type EpisodesQueryResponse = {|
   +episodes: ?{|
     +results: ?$ReadOnlyArray<?{|
-      +id: ?string,
       +name: ?string,
       +air_date: ?string,
       +episode: ?string,
@@ -31,7 +30,6 @@ export type EpisodesQuery = {|
 query EpisodesQuery {
   episodes(page: 1) {
     results {
-      id
       name
       air_date
       episode
@@ -67,13 +65,6 @@ var v0 = [
         "concreteType": "Episode",
         "plural": true,
         "selections": [
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "id",
-            "args": null,
-            "storageKey": null
-          },
           {
             "kind": "ScalarField",
             "alias": null,
@@ -120,11 +111,11 @@ return {
     "operationKind": "query",
     "name": "EpisodesQuery",
     "id": null,
-    "text": "query EpisodesQuery {\n  episodes(page: 1) {\n    results {\n      id\n      name\n      air_date\n      episode\n    }\n  }\n}\n",
+    "text": "query EpisodesQuery {\n  episodes(page: 1) {\n    results {\n      name\n      air_date\n      episode\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'cf9565b9ea8ef613614de1f9a154af82';
+(node/*: any*/).hash = '182e6034ac6b2fdf747ed50735836dfb';
 module.exports = node;

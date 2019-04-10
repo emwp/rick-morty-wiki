@@ -12,7 +12,6 @@ const Locations = componentProps => {
         query LocationsQuery {
           locations(page: 1) {
             results {
-              id
               name
               type
               dimension
