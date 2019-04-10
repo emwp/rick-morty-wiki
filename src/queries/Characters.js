@@ -5,7 +5,7 @@ import Card from '../components/Card';
 
 import environment from '../environment/Environment';
 
-const Characters = componentProps => {
+const Characters = () => {
   return (
     <QueryRenderer
       environment={environment}

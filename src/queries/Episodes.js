@@ -6,7 +6,7 @@ import EpisodeItem from '../components/EpisodeItem';
 
 import environment from '../environment/Environment';
 
-const Episodes = componentProps => {
+const Episodes = () => {
   return (
     <QueryRenderer
       environment={environment}
@@ -40,14 +40,9 @@ const Episodes = componentProps => {
         return (
           <FlatList
             data={props.episodes.results}
-            keyExtractor={item => item.id.toString()}
+            keyExtractor={item => item.name}
             renderItem={({ item }) => (
-              <EpisodeItem
-                id={item.id}
-                name={item.name}
-                air_date={item.air_date}
-                episode={item.episode}
-              />
+              <EpisodeItem name={item.name} air_date={item.air_date} episode={item.episode} />
             )}
           />
         );
