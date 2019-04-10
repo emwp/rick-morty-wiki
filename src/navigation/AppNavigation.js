@@ -21,7 +21,7 @@ const screens = createBottomTabNavigator(
           return (
             <Image
               source={require('../assets/rick.png')}
-              style={{ width: 26, height: 26, marginTop: 7, tintColor: tintColor }}
+              style={{ width: 26, height: 26, marginTop: 7 }}
             />
           );
         },
@@ -34,8 +34,8 @@ const screens = createBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => {
           return (
             <Image
-              source={require('../assets/globe.png')}
-              style={{ width: 26, height: 26, marginTop: 7, tintColor: tintColor }}
+              source={require('../assets/camera.png')}
+              style={{ width: 26, height: 26, marginTop: 7 }}
             />
           );
         },
@@ -49,7 +49,7 @@ const screens = createBottomTabNavigator(
           return (
             <Image
               source={require('../assets/globe.png')}
-              style={{ width: 26, height: 26, marginTop: 7, tintColor: tintColor }}
+              style={{ width: 26, height: 26, marginTop: 7 }}
             />
           );
         },
@@ -61,7 +61,7 @@ const screens = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: '',
       activeBackgroundColor: '#7f0ba8',
-      inactiveBackgroundColor: '#7f0ba8',
+      inactiveBackgroundColor: '#b133dd',
       showIcon: true,
       showLabel: true,
       labelStyle: {
