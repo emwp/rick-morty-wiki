@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
 const SingleCharacter = ({ id, name, status, species, gender, origin, lastLocation, image }) => {
   return (
-    <View>
-      <Text style={styles.text}>Should be character name: {name}</Text>
+    <View style={styles.container}>
+      <Image source={{ uri: image }} style={styles.image} />
     </View>
   );
 };
@@ -12,10 +12,19 @@ const SingleCharacter = ({ id, name, status, species, gender, origin, lastLocati
 export default SingleCharacter;
 
 const styles = StyleSheet.create({
-  text: {
+  container: {
+    flex: 1,
+  },
+  image: {
+    width: '95%',
+    height: undefined,
+    aspectRatio: 1.25,
+    borderRadius: 10,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    margin: 10,
+  },
+  info: {
     fontSize: 18,
-    fontWeight: '500',
-    marginLeft: 10,
-    overflow: 'hidden',
   },
 });

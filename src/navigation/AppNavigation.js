@@ -60,10 +60,13 @@ const screens = createBottomTabNavigator(
     initialRouteName: 'Characters',
     tabBarOptions: {
       activeTintColor: '',
+      activeBackgroundColor: '#7f0ba8',
+      inactiveBackgroundColor: '#7f0ba8',
       showIcon: true,
       showLabel: true,
       labelStyle: {
         fontSize: 16,
+        color: 'white',
       },
     },
   },
@@ -82,6 +85,12 @@ const CharacterDetails = createStackNavigator(
   },
   {
     initialRouteName: 'Characters',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#7f0ba8',
+      },
+      headerTintColor: '#fff',
+    },
   },
 );
 
