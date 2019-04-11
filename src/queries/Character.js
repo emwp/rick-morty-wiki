@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import { graphql, QueryRenderer } from 'react-relay';
 import environment from '../environment/Environment';
 import SingleCharacter from '../components/SingleCharacter';
@@ -36,8 +36,8 @@ const Character = props => {
         }
         if (!props) {
           return (
-            <View>
-              <Text>Loading!</Text>
+            <View style={{ flex: 1, justifyContent: 'center' }}>
+              <ActivityIndicator size="large" color="#7f0ba8" />
             </View>
           );
         }

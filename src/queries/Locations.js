@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { graphql, QueryRenderer } from 'react-relay';
 
 import LocationItem from '../components/LocationItem';
@@ -32,8 +32,8 @@ const Locations = () => {
         }
         if (!props) {
           return (
-            <View>
-              <Text>Loading!</Text>
+            <View style={{ flex: 1, justifyContent: 'center' }}>
+              <ActivityIndicator size="large" color="#7f0ba8" />
             </View>
           );
         }
