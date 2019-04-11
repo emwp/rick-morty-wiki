@@ -1,20 +1,23 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import ViewOverflow from 'react-native-view-overflow';
 
 const EpisodeItem = props => {
   const { name, air_date, episode } = props;
 
   return (
-    <View style={styles.container}>
-      <View>
-        <Image source={require('../assets/episode.png')} style={styles.image} />
+    <ViewOverflow>
+      <View style={styles.container}>
+        <View>
+          <Image source={require('../assets/episode.png')} style={styles.image} />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Episode: {episode}</Text>
+          <Text style={styles.text}>Name: {name}</Text>
+          <Text style={styles.text}>Air Date: {air_date}</Text>
+        </View>
       </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Episode: {episode}</Text>
-        <Text style={styles.text}>Name: {name}</Text>
-        <Text style={styles.text}>Air Date: {air_date}</Text>
-      </View>
-    </View>
+    </ViewOverflow>
   );
 };
 
@@ -31,6 +34,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     margin: 10,
+    overflow: 'hidden',
   },
   image: {
     height: 100,
@@ -40,7 +44,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     marginLeft: 5,
-    overflow: 'hidden',
   },
 });
 
