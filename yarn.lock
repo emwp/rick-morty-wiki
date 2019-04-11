@@ -5062,6 +5062,11 @@ react-native-tab-view@^1.0.0, react-native-tab-view@^1.2.0:
   dependencies:
     prop-types "^15.6.1"
 
+react-native-view-overflow@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-view-overflow/-/react-native-view-overflow-0.0.4.tgz#36b2c00fbe7f270a0a92548eeb9ee147d2a4c3ae"
+  integrity sha512-AUci2As9lI23CPG1urS/cLC/EQWMbc0kwBhClY4ikZGgBJQF2uBkCPIC/1KY4hcIvhtdv4pxMXC9UIPrdYbwSw==
+
 react-native@0.59.3:
   version "0.59.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.59.3.tgz#b984bbe457f63d5515046d32ea5721fd22843548"

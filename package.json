@@ -11,6 +11,7 @@
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-gesture-handler": "^1.1.0",
+    "react-native-view-overflow": "^0.0.4",
     "react-navigation": "^3.6.1",
     "react-relay": "^3.0.0",
     "react-timer-mixin": "^0.13.4"
