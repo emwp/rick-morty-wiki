@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-const EpisodeItem = props => {
-  const { name, air_date, episode } = props;
+const LocationItem = props => {
+  const { name, type, dimension } = props;
 
   return (
     <View style={styles.container}>
       <View>
-        <Image source={require('../assets/episode.png')} style={styles.image} />
+        <Image source={require('../assets/planets.png')} style={styles.image} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.text}>Episode: {episode}</Text>
         <Text style={styles.text}>Name: {name}</Text>
-        <Text style={styles.text}>Air Date: {air_date}</Text>
+        <Text style={styles.text}>Type: {type}</Text>
+        <Text style={styles.text}>Dimension: {dimension}</Text>
       </View>
     </View>
   );
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EpisodeItem;
+export default LocationItem;

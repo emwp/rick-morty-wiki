@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 6e57c340b0cbba4fb5d97ff1105fe07a
+ * @relayHash 9892d63758a79c5b040dea14c5465122
  */
 
 /* eslint-disable */
@@ -28,7 +28,7 @@ export type LocationsQuery = {|
 
 /*
 query LocationsQuery {
-  locations(page: 1) {
+  locations {
     results {
       name
       type
@@ -44,15 +44,8 @@ var v0 = [
     "kind": "LinkedField",
     "alias": null,
     "name": "locations",
-    "storageKey": "locations(page:1)",
-    "args": [
-      {
-        "kind": "Literal",
-        "name": "page",
-        "value": 1,
-        "type": "Int"
-      }
-    ],
+    "storageKey": null,
+    "args": null,
     "concreteType": "Locations",
     "plural": false,
     "selections": [
@@ -111,11 +104,11 @@ return {
     "operationKind": "query",
     "name": "LocationsQuery",
     "id": null,
-    "text": "query LocationsQuery {\n  locations(page: 1) {\n    results {\n      name\n      type\n      dimension\n    }\n  }\n}\n",
+    "text": "query LocationsQuery {\n  locations {\n    results {\n      name\n      type\n      dimension\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'dc3a1212d3677467c4433ba1d0b6d8d0';
+(node/*: any*/).hash = 'd025db335c658b5e1688542c926b7f00';
 module.exports = node;

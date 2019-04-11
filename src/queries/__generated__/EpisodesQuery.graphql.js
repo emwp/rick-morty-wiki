@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 7906bae826fab3df51105d7cbc2927cd
+ * @relayHash 33ddd8c14860069fcb5407bfa35d9669
  */
 
 /* eslint-disable */
@@ -28,7 +28,7 @@ export type EpisodesQuery = {|
 
 /*
 query EpisodesQuery {
-  episodes(page: 1) {
+  episodes {
     results {
       name
       air_date
@@ -44,15 +44,8 @@ var v0 = [
     "kind": "LinkedField",
     "alias": null,
     "name": "episodes",
-    "storageKey": "episodes(page:1)",
-    "args": [
-      {
-        "kind": "Literal",
-        "name": "page",
-        "value": 1,
-        "type": "Int"
-      }
-    ],
+    "storageKey": null,
+    "args": null,
     "concreteType": "Episodes",
     "plural": false,
     "selections": [
@@ -111,11 +104,11 @@ return {
     "operationKind": "query",
     "name": "EpisodesQuery",
     "id": null,
-    "text": "query EpisodesQuery {\n  episodes(page: 1) {\n    results {\n      name\n      air_date\n      episode\n    }\n  }\n}\n",
+    "text": "query EpisodesQuery {\n  episodes {\n    results {\n      name\n      air_date\n      episode\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '182e6034ac6b2fdf747ed50735836dfb';
+(node/*: any*/).hash = 'b64cf7df2c216e23bdfa63f1047eb53c';
 module.exports = node;

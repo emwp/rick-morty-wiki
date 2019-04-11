@@ -12,7 +12,7 @@ const Episodes = () => {
       environment={environment}
       query={graphql`
         query EpisodesQuery {
-          episodes(page: 1) {
+          episodes {
             results {
               name
               air_date
@@ -21,7 +21,7 @@ const Episodes = () => {
           }
         }
       `}
-      variables={{ page: 1 }}
+      variables={{}}
       render={({ error, props }) => {
         if (error) {
           return (

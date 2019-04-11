@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash da4469ff988af01b0c68c40c4010a677
+ * @relayHash a8923057397ac24a765b369199e3b555
  */
 
 /* eslint-disable */
@@ -30,7 +30,7 @@ export type CharactersQuery = {|
 
 /*
 query CharactersQuery {
-  characters(page: 1) {
+  characters {
     results {
       id
       name
@@ -48,15 +48,8 @@ var v0 = [
     "kind": "LinkedField",
     "alias": null,
     "name": "characters",
-    "storageKey": "characters(page:1)",
-    "args": [
-      {
-        "kind": "Literal",
-        "name": "page",
-        "value": 1,
-        "type": "Int"
-      }
-    ],
+    "storageKey": null,
+    "args": null,
     "concreteType": "Characters",
     "plural": false,
     "selections": [
@@ -129,11 +122,11 @@ return {
     "operationKind": "query",
     "name": "CharactersQuery",
     "id": null,
-    "text": "query CharactersQuery {\n  characters(page: 1) {\n    results {\n      id\n      name\n      status\n      species\n      image\n    }\n  }\n}\n",
+    "text": "query CharactersQuery {\n  characters {\n    results {\n      id\n      name\n      status\n      species\n      image\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'ee5f007eb7491954c192bd5519b157dc';
+(node/*: any*/).hash = '2bd66e7b1bf95ac72df7479c898316ec';
 module.exports = node;

@@ -11,7 +11,7 @@ const Characters = () => {
       environment={environment}
       query={graphql`
         query CharactersQuery {
-          characters(page: 1) {
+          characters {
             results {
               id
               name
@@ -22,7 +22,7 @@ const Characters = () => {
           }
         }
       `}
-      variables={{ page: 1 }}
+      variables={{}}
       render={({ error, props }) => {
         if (error) {
           return (

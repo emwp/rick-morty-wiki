@@ -2,15 +2,17 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { graphql, QueryRenderer } from 'react-relay';
 
+import LocationItem from '../components/LocationItem';
+
 import environment from '../environment/Environment';
 
-const Locations = componentProps => {
+const Locations = () => {
   return (
     <QueryRenderer
       environment={environment}
       query={graphql`
         query LocationsQuery {
-          locations(page: 1) {
+          locations {
             results {
               name
               type
@@ -19,7 +21,7 @@ const Locations = componentProps => {
           }
         }
       `}
-      variables={{ page: 1 }}
+      variables={{}}
       render={({ error, props }) => {
         if (error) {
           return (
@@ -36,9 +38,13 @@ const Locations = componentProps => {
           );
         }
         return (
-          <View>
-            <Text>{props.locations.results[15].name}</Text>
-          </View>
+          <FlatList
+            data={props.locations.results}
+            keyExtractor={item => item.name}
+            renderItem={({ item }) => (
+              <LocationItem name={item.name} type={item.type} dimension={item.dimension} />
+            )}
+          />
         );
       }}
     />
