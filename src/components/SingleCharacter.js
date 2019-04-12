@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-const SingleCharacter = ({ id, name, status, species, gender, origin, lastLocation, image }) => {
+const SingleCharacter = ({ name, status, species, gender, origin, lastLocation, image }) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.image} />
