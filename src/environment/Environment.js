@@ -1,7 +1,8 @@
 import { Environment, Network, RecordSource, Store } from 'relay-runtime';
+import RelayNetworkLogger from 'relay-runtime/lib/RelayNetworkLogger';
 
-function fetchQuery(operation, variables) {
-  return fetch('https://rickandmortyapi.com/graphql/', {
+const fetchQuery = async (operation, variables) => {
+  const response = await fetch('https://rickandmortyapi.com/graphql', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -10,13 +11,16 @@ function fetchQuery(operation, variables) {
       query: operation.text,
       variables,
     }),
-  }).then(response => {
-    return response.json();
   });
-}
+  const data = await response.json();
+
+  return data;
+};
+
+const network = Network.create(RelayNetworkLogger.wrapFetch(fetchQuery));
 
 const environment = new Environment({
-  network: Network.create(fetchQuery),
+  network,
   store: new Store(new RecordSource()),
 });
 
