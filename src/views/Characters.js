@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { FlatList, View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { createRefetchContainer, graphql } from 'react-relay';
 import ViewOverflow from 'react-native-view-overflow';
@@ -44,7 +44,7 @@ export default createRefetchContainer(
     query: graphql`
       fragment Characters_query on Query
         @argumentDefinitions(page: { type: "Int", defaultValue: 1 }) {
-        characters(page: $page) {
+        characters(page: $page) @connection(key: "Characters_characters") {
           results {
             id
             name
