@@ -9,26 +9,26 @@
 /*::
 import type { ReaderFragment } from 'relay-runtime';
 import type { FragmentReference } from "relay-runtime";
-declare export opaque type Characters_query$ref: FragmentReference;
-export type Characters_query = {|
-  +characters: ?{|
+declare export opaque type Episodes_query$ref: FragmentReference;
+export type Episodes_query = {|
+  +episodes: ?{|
     +results: ?$ReadOnlyArray<?{|
-      +id: string,
       +name: ?string,
-      +image: ?string,
+      +episode: ?string,
+      +air_date: ?string,
     |}>,
     +info: ?{|
       +next: ?number
     |},
   |},
-  +$refType: Characters_query$ref,
+  +$refType: Episodes_query$ref,
 |};
 */
 
 
 const node/*: ReaderFragment*/ = {
   "kind": "Fragment",
-  "name": "Characters_query",
+  "name": "Episodes_query",
   "type": "Query",
   "metadata": null,
   "argumentDefinitions": [
@@ -43,7 +43,7 @@ const node/*: ReaderFragment*/ = {
     {
       "kind": "LinkedField",
       "alias": null,
-      "name": "characters",
+      "name": "episodes",
       "storageKey": null,
       "args": [
         {
@@ -53,7 +53,7 @@ const node/*: ReaderFragment*/ = {
           "type": "Int"
         }
       ],
-      "concreteType": "Characters",
+      "concreteType": "Episodes",
       "plural": false,
       "selections": [
         {
@@ -62,16 +62,9 @@ const node/*: ReaderFragment*/ = {
           "name": "results",
           "storageKey": null,
           "args": null,
-          "concreteType": "Character",
+          "concreteType": "Episode",
           "plural": true,
           "selections": [
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "name": "id",
-              "args": null,
-              "storageKey": null
-            },
             {
               "kind": "ScalarField",
               "alias": null,
@@ -82,7 +75,14 @@ const node/*: ReaderFragment*/ = {
             {
               "kind": "ScalarField",
               "alias": null,
-              "name": "image",
+              "name": "episode",
+              "args": null,
+              "storageKey": null
+            },
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "air_date",
               "args": null,
               "storageKey": null
             }
@@ -111,5 +111,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = '6bd26689819c13e67ed55eca8e4c56f4';
+(node/*: any*/).hash = 'f3b6eed890c5e5941e023398d9cdea60';
 module.exports = node;

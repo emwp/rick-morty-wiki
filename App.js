@@ -1,9 +1,9 @@
 import React from 'react';
-// import AppNavigation from './src/navigation/AppNavigation';
-import CharacterList from './src/queries/CharacterList';
+// import CharacterList from './src/queries/CharacterList';
+import EpisodeList from './src/queries/EpisodeList';
 
 const App = () => {
-  return <CharacterList />;
+  return <EpisodeList />;
 };
 
 export default App;
