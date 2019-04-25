@@ -7,7 +7,7 @@ import {
   createSwitchNavigator,
 } from 'react-navigation';
 import CharacterList from '../queries/CharacterList';
-import ShowCharacter from '../views/Character';
+import ShowCharacter from '../views/ShowCaracter';
 import LocationList from '../queries/LocationList';
 import EpisodeList from '../queries/EpisodeList';
 

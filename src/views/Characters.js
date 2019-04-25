@@ -1,11 +1,14 @@
 import React from 'react';
 import { FlatList, View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { createRefetchContainer, graphql } from 'react-relay';
 import ViewOverflow from 'react-native-view-overflow';
 
 const Characters = props => {
-  const { query, relay } = props;
+  const { query, relay, navigation } = props;
   const { characters } = query;
+
+  const pressHandler = id => navigation.navigate('Character', { id });
 
   const _loadMore = () => {
     const refetchVariables = fragmentVariables => ({
@@ -22,10 +25,10 @@ const Characters = props => {
         renderItem={({ item }) => (
           <ViewOverflow>
             <View style={styles.container}>
-              <TouchableOpacity onPress={() => pressHandler()}>
+              <TouchableOpacity onPress={() => pressHandler(item.id)}>
                 <Image source={{ uri: item.image }} style={styles.image} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => pressHandler()} style={styles.textContainer}>
+              <TouchableOpacity onPress={() => pressHandler(item.id)} style={styles.textContainer}>
                 <Text style={styles.text}>{item.name}</Text>
               </TouchableOpacity>
             </View>
@@ -38,30 +41,32 @@ const Characters = props => {
   );
 };
 
-export default createRefetchContainer(
-  Characters,
-  {
-    query: graphql`
-      fragment Characters_query on Query
-        @argumentDefinitions(page: { type: "Int", defaultValue: 1 }) {
-        characters(page: $page) {
-          results {
-            id
-            name
-            image
-          }
-          info {
-            next
+export default withNavigation(
+  createRefetchContainer(
+    Characters,
+    {
+      query: graphql`
+        fragment Characters_query on Query
+          @argumentDefinitions(page: { type: "Int", defaultValue: 1 }) {
+          characters(page: $page) {
+            results {
+              id
+              name
+              image
+            }
+            info {
+              next
+            }
           }
         }
+      `,
+    },
+    graphql`
+      query CharactersRefetchQuery($page: Int) {
+        ...Characters_query @arguments(page: $page)
       }
     `,
-  },
-  graphql`
-    query CharactersRefetchQuery($page: Int) {
-      ...Characters_query @arguments(page: $page)
-    }
-  `,
+  ),
 );
 
 const styles = StyleSheet.create({
