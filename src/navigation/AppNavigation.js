@@ -6,10 +6,10 @@ import {
   createStackNavigator,
   createSwitchNavigator,
 } from 'react-navigation';
-import CharacterList from '../queries/Characters';
-import ShowCharacter from '../views/ShowCharacter';
-import LocationList from '../views/LocationList';
-import EpisodeList from '../views/EpisodeList';
+import CharacterList from '../queries/CharacterList';
+import ShowCharacter from '../views/Character';
+import LocationList from '../queries/LocationList';
+import EpisodeList from '../queries/EpisodeList';
 
 const screens = createBottomTabNavigator(
   {
